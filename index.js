@@ -3,8 +3,6 @@ const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
 
-const Commits = require("./routes/Commits");
-
 require("dotenv").config();
 
 const app = express();
@@ -31,4 +29,6 @@ app.get("/", (req, res) => {
   });
 });
 
-app.use("/commits", Commits);
+app.post("/", (req, res) => {
+  console.log(req.body);
+});
